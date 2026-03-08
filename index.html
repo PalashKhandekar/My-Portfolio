@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palash Khandekar — DevOps Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080c10;
+    --surface: #0d1117;
+    --surface2: #161b22;
+    --border: #21262d;
+    --accent: #00d4aa;
+    --accent2: #f78166;
+    --accent3: #79c0ff;
+    --text: #e6edf3;
+    --muted: #7d8590;
+    --bright: #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── GRID NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,212,170,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,170,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── SCANLINE ── */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.15) 2px,
+      rgba(0,0,0,0.15) 4px
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 48px;
+    background: rgba(8,12,16,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--accent);
+    letter-spacing: -0.5px;
+  }
+
+  .nav-logo span { color: var(--muted); font-weight: 400; }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 48px 80px;
+    overflow: hidden;
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(0,212,170,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-glow2 {
+    position: absolute;
+    bottom: -100px; left: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(121,192,255,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,212,170,0.08);
+    border: 1px solid rgba(0,212,170,0.25);
+    color: var(--accent);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .hero-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(52px, 8vw, 96px);
+    line-height: 0.95;
+    letter-spacing: -3px;
+    color: var(--bright);
+    margin-bottom: 8px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  .hero-name .accent { color: var(--accent); }
+
+  .hero-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 400;
+    font-size: clamp(18px, 3vw, 28px);
+    color: var(--muted);
+    letter-spacing: -0.5px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-desc {
+    max-width: 600px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 48px;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+
+  .stat-item { text-align: left; }
+
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* ── TERMINAL DECORATION ── */
+  .terminal-deco {
+    position: absolute;
+    right: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    width: 380px;
+    font-size: 12px;
+    animation: fadeUp 0.8s 0.5s ease both;
+    z-index: 1;
+  }
+
+  .terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-r { background: #ff5f56; }
+  .dot-y { background: #ffbd2e; }
+  .dot-g { background: #27c93f; }
+
+  .terminal-title {
+    margin-left: auto;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+
+  .t-line { margin-bottom: 6px; }
+  .t-prompt { color: var(--accent); }
+  .t-cmd { color: var(--text); }
+  .t-out { color: var(--muted); padding-left: 16px; }
+  .t-out.hi { color: var(--accent3); }
+  .t-out.warn { color: var(--accent2); }
+
+  .cursor {
+    display: inline-block;
+    width: 8px;
+    height: 14px;
+    background: var(--accent);
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+  /* ── SECTIONS ── */
+  section {
+    position: relative;
+    z-index: 1;
+    padding: 100px 48px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800;
+    color: var(--bright);
+    letter-spacing: -1.5px;
+    margin-bottom: 56px;
+  }
+
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    margin-bottom: 80px;
+    opacity: 0.3;
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .skill-category {
+    background: var(--surface);
+    padding: 32px;
+    transition: background 0.2s;
+  }
+
+  .skill-category:hover { background: var(--surface2); }
+
+  .skill-cat-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .skill-cat-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--bright);
+    margin-bottom: 16px;
+    letter-spacing: -0.3px;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 2px;
+    transition: all 0.2s;
+    letter-spacing: 0.3px;
+  }
+
+  .tag:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(0,212,170,0.08);
+  }
+
+  .tag.featured {
+    border-color: rgba(0,212,170,0.4);
+    color: var(--accent);
+    background: rgba(0,212,170,0.08);
+  }
+
+  /* ── EXPERIENCE ── */
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 8px; bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, var(--accent), transparent);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 56px;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -37px; top: 8px;
+    width: 10px; height: 10px;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+  }
+
+  .timeline-item:first-child::before { background: var(--accent); }
+
+  .exp-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+
+  .exp-role {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--bright);
+    letter-spacing: -0.5px;
+  }
+
+  .exp-duration {
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 1px;
+    background: rgba(0,212,170,0.08);
+    border: 1px solid rgba(0,212,170,0.2);
+    padding: 4px 12px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .exp-company {
+    color: var(--accent3);
+    font-size: 13px;
+    margin-bottom: 16px;
+    letter-spacing: 0.3px;
+  }
+
+  .exp-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .exp-points li {
+    position: relative;
+    padding-left: 20px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .exp-points li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 10px;
+    top: 3px;
+  }
+
+  /* ── DOMAINS ── */
+  .domains-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .domain-card {
+    background: var(--surface);
+    padding: 40px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s;
+  }
+
+  .domain-card:hover { background: var(--surface2); }
+
+  .domain-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+  }
+
+  .domain-card:nth-child(1)::before { background: var(--accent); }
+  .domain-card:nth-child(2)::before { background: var(--accent3); }
+  .domain-card:nth-child(3)::before { background: var(--accent2); }
+
+  .domain-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .domain-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--bright);
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+  }
+
+  .domain-desc {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    max-width: 700px;
+  }
+
+  .contact-item {
+    background: var(--surface);
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: background 0.2s;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .contact-item:hover { background: var(--surface2); }
+
+  .contact-icon {
+    width: 40px; height: 40px;
+    background: rgba(0,212,170,0.1);
+    border: 1px solid rgba(0,212,170,0.2);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .contact-label {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .contact-val {
+    color: var(--accent3);
+    font-size: 12px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative;
+    z-index: 1;
+    padding: 32px 48px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-text {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+
+  .footer-accent { color: var(--accent); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 24px 80px; flex-direction: column; }
+    .terminal-deco { display: none; }
+    section { padding: 72px 24px; }
+    .domains-row { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">PK<span>.dev</span></div>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#domains">Domains</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Available for opportunities</div>
+    <div class="hero-name">Palash<br><span class="accent">Khandekar</span></div>
+    <div class="hero-title">DevOps Engineer</div>
+    <p class="hero-desc">
+      5.6 years architecting resilient CI/CD pipelines, AWS cloud infrastructure, and container orchestration at scale. 
+      Bridging development and operations across MS Dynamics CRM, E-commerce, and AI platforms.
+    </p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">5.6</div>
+        <div class="stat-label">Years Exp.</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">20+</div>
+        <div class="stat-label">Technologies</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Industry Domains</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="terminal-deco">
+    <div class="terminal-header">
+      <div class="dot dot-r"></div>
+      <div class="dot dot-y"></div>
+      <div class="dot dot-g"></div>
+      <span class="terminal-title">palash@devops ~ bash</span>
+    </div>
+    <div class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">whoami</span></div>
+    <div class="t-line t-out hi">palash_khandekar</div>
+    <div class="t-line" style="margin-top:12px"><span class="t-prompt">$ </span><span class="t-cmd">kubectl get nodes</span></div>
+    <div class="t-line t-out">NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STATUS&nbsp;&nbsp;&nbsp;ROLES</div>
+    <div class="t-line t-out hi">prod-node-01&nbsp;&nbsp;Ready&nbsp;&nbsp;&nbsp;&nbsp;control-plane</div>
+    <div class="t-line t-out hi">prod-node-02&nbsp;&nbsp;Ready&nbsp;&nbsp;&nbsp;&nbsp;worker</div>
+    <div class="t-line" style="margin-top:12px"><span class="t-prompt">$ </span><span class="t-cmd">aws s3 ls | wc -l</span></div>
+    <div class="t-line t-out warn">42</div>
+    <div class="t-line" style="margin-top:12px"><span class="t-prompt">$ </span><span class="t-cmd">terraform plan</span></div>
+    <div class="t-line t-out hi">Plan: 12 to add, 0 to destroy.</div>
+    <div class="t-line" style="margin-top:12px"><span class="t-prompt">$ </span><span class="t-cmd">_</span><span class="cursor"></span></div>
+  </div>
+</section>
+
+<div class="section-divider" style="margin: 0 48px;"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Technical Arsenal</div>
+  <div class="section-title">Core Skills</div>
+  <div class="skills-grid reveal">
+
+    <div class="skill-category">
+      <div class="skill-cat-label">01 / Cloud</div>
+      <div class="skill-cat-title">Cloud Platforms</div>
+      <div class="skill-tags">
+        <span class="tag featured">AWS</span>
+        <span class="tag">EC2</span>
+        <span class="tag">S3</span>
+        <span class="tag">IAM</span>
+        <span class="tag">VPC</span>
+        <span class="tag">Route53</span>
+        <span class="tag">CloudWatch</span>
+        <span class="tag">CloudFront</span>
+        <span class="tag">CloudTrail</span>
+        <span class="tag">EKS</span>
+        <span class="tag">ECR</span>
+        <span class="tag featured">Azure</span>
+        <span class="tag">VNet</span>
+        <span class="tag">RBAC</span>
+        <span class="tag">Azure VM</span>
+        <span class="tag">Blob Storage</span>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <div class="skill-cat-label">02 / CI/CD</div>
+      <div class="skill-cat-title">Pipelines & Automation</div>
+      <div class="skill-tags">
+        <span class="tag featured">Jenkins</span>
+        <span class="tag featured">GitLab CI/CD</span>
+        <span class="tag">GitHub Actions</span>
+        <span class="tag">ArgoCD</span>
+        <span class="tag">SonarQube</span>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <div class="skill-cat-label">03 / Containers</div>
+      <div class="skill-cat-title">Containerization & Orchestration</div>
+      <div class="skill-tags">
+        <span class="tag featured">Docker</span>
+        <span class="tag featured">Kubernetes</span>
+        <span class="tag">EKS</span>
+        <span class="tag">ECR</span>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <div class="skill-cat-label">04 / IaC</div>
+      <div class="skill-cat-title">Infrastructure as Code</div>
+      <div class="skill-tags">
+        <span class="tag featured">Terraform</span>
+        <span class="tag featured">Ansible</span>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <div class="skill-cat-label">05 / Monitoring</div>
+      <div class="skill-cat-title">Observability & Alerting</div>
+      <div class="skill-tags">
+        <span class="tag featured">Prometheus</span>
+        <span class="tag featured">Grafana</span>
+        <span class="tag">PagerDuty</span>
+        <span class="tag">Amazon EventBridge</span>
+        <span class="tag">CloudWatch</span>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <div class="skill-cat-label">06 / Dev</div>
+      <div class="skill-cat-title">Programming & Tooling</div>
+      <div class="skill-tags">
+        <span class="tag featured">Bash</span>
+        <span class="tag featured">Python</span>
+        <span class="tag">Shell Script</span>
+        <span class="tag">Java</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Git</span>
+        <span class="tag">GitHub</span>
+        <span class="tag">Jira</span>
+        <span class="tag">Azure DevOps</span>
+        <span class="tag">Agentic AI Dev</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider" style="margin: 0 48px;"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Career Path</div>
+  <div class="section-title">Experience</div>
+  <div class="timeline">
+
+    <div class="timeline-item reveal">
+      <div class="exp-header">
+        <div class="exp-role">Senior DevOps Engineer</div>
+        <div class="exp-duration">Current Role</div>
+      </div>
+      <div class="exp-company">AI & Cloud Platform · 5.6 Yrs Total Experience</div>
+      <ul class="exp-points">
+        <li>Architected and maintained scalable AWS cloud infrastructure using EC2, EKS, S3, IAM, VPC, and CloudFront for high-availability deployments.</li>
+        <li>Designed and optimized CI/CD pipelines using Jenkins, GitLab CI/CD, GitHub Actions, and ArgoCD for continuous delivery workflows.</li>
+        <li>Implemented containerized microservices with Docker and Kubernetes (EKS), enabling zero-downtime rolling deployments.</li>
+        <li>Provisioned and managed cloud infrastructure as code using Terraform and Ansible, reducing manual configuration drift.</li>
+        <li>Built end-to-end observability with Prometheus, Grafana, PagerDuty, and Amazon EventBridge for proactive incident management.</li>
+        <li>Integrated SonarQube into pipelines to enforce code quality gates and automated security checks.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="exp-header">
+        <div class="exp-role">DevOps Engineer — MS Dynamics CRM</div>
+        <div class="exp-duration">Mid-Career</div>
+      </div>
+      <div class="exp-company">Enterprise CRM Platform</div>
+      <ul class="exp-points">
+        <li>Managed deployment pipelines for MS Dynamics CRM environments across dev, staging, and production using Azure DevOps.</li>
+        <li>Configured Azure infrastructure including VNets, RBAC policies, VMs, and Blob Storage for enterprise CRM workloads.</li>
+        <li>Automated configuration management and provisioning using Ansible playbooks, eliminating repetitive manual tasks.</li>
+        <li>Implemented monitoring and alerting using CloudWatch and Azure-native tools to meet SLA requirements.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="exp-header">
+        <div class="exp-role">DevOps Engineer — E-Commerce</div>
+        <div class="exp-duration">Early Career</div>
+      </div>
+      <div class="exp-company">E-Commerce & Digital Platform</div>
+      <ul class="exp-points">
+        <li>Built and maintained CI/CD pipelines for high-traffic e-commerce platforms, ensuring rapid and reliable feature deployments.</li>
+        <li>Implemented Docker-based containerization strategies to improve environment consistency across teams.</li>
+        <li>Utilized Route53, CloudFront, and S3 for globally distributed, low-latency content delivery.</li>
+        <li>Collaborated cross-functionally with development teams to integrate test automation into delivery pipelines.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider" style="margin: 0 48px;"></div>
+
+<!-- DOMAINS -->
+<section id="domains">
+  <div class="section-label">Industry Experience</div>
+  <div class="section-title">Domain Expertise</div>
+  <div class="domains-row reveal">
+
+    <div class="domain-card">
+      <div class="domain-icon">⚙️</div>
+      <div class="domain-title">MS Dynamics CRM</div>
+      <p class="domain-desc">
+        End-to-end DevOps for enterprise CRM deployments. Azure-native infrastructure, Azure DevOps pipelines, RBAC governance, and Ansible-driven configuration management at scale.
+      </p>
+    </div>
+
+    <div class="domain-card">
+      <div class="domain-icon">🛒</div>
+      <div class="domain-title">E-Commerce Platforms</div>
+      <p class="domain-desc">
+        High-availability cloud deployments for e-commerce workloads. CDN optimization via CloudFront, containerized microservices, fast-cycle CI/CD pipelines, and SLA-driven monitoring.
+      </p>
+    </div>
+
+    <div class="domain-card">
+      <div class="domain-icon">🤖</div>
+      <div class="domain-title">AI Platforms</div>
+      <p class="domain-desc">
+        Cloud infrastructure and MLOps-adjacent DevOps for AI/ML platforms. Agentic AI development experience, scalable EKS cluster management, and automated event-driven architectures.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider" style="margin: 0 48px;"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Get In Touch</div>
+  <div class="section-title">Contact</div>
+  <div class="contact-grid reveal">
+    <div class="contact-item">
+      <div class="contact-icon">✉️</div>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-val">palash.khandekar@email.com</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🔗</div>
+      <div>
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-val">linkedin.com/in/palashkhandekar</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🐙</div>
+      <div>
+        <div class="contact-label">GitHub</div>
+        <div class="contact-val">github.com/palashkhandekar</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📍</div>
+      <div>
+        <div class="contact-label">Location</div>
+        <div class="contact-val">India · Open to Remote</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-text">© 2025 <span class="footer-accent">Palash Khandekar</span> · DevOps Engineer</div>
+  <div class="footer-text">Built with ☁️ · <span class="footer-accent">AWS</span> · <span class="footer-accent">Kubernetes</span> · <span class="footer-accent">Terraform</span></div>
+</footer>
+
+<script>
+  // Intersection observer for reveal animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 100);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
