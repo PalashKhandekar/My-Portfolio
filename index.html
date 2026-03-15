@@ -9,8 +9,6 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;color:#e2e8f0;line-height:1.6;-webkit-text-size-adjust:100%;min-height:100vh;background:#0f172a;overflow-x:hidden}
-
-/* ── BACKGROUND ── */
 .bg{position:fixed;inset:0;z-index:0;pointer-events:none}
 .bg::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 45%,#0f2942 75%,#0f172a 100%)}
 .bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(99,102,241,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,.06) 1px,transparent 1px);background-size:40px 40px}
@@ -20,15 +18,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-seri
 .o3{width:360px;height:360px;background:#1d4ed8;bottom:-100px;left:35%;animation-delay:-12s}
 .o4{width:260px;height:260px;background:#7c3aed;top:65%;left:8%;animation-delay:-4s}
 @keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,30px) scale(1.08)}100%{transform:translate(-20px,50px) scale(.95)}}
-
-/* ── LAYOUT ── */
 .wrap{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:1.5rem 1rem 5rem}
 .glass{background:rgba(255,255,255,.06);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.11);border-radius:16px;padding:1.5rem}
 a{color:#93c5fd;text-decoration:none}
 a:hover{color:#bfdbfe;text-decoration:underline}
 .sec-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.09em;color:rgba(255,255,255,.35);margin-bottom:1rem}
-
-/* ── HERO ── */
 .hero{padding:2rem 0 1rem}
 .hrow{display:flex;align-items:center;gap:14px;margin-bottom:12px}
 .av{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#6366f1);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:500;color:#fff;flex-shrink:0;border:2px solid rgba(255,255,255,.2)}
@@ -40,49 +34,40 @@ a:hover{color:#bfdbfe;text-decoration:underline}
 .contacts{display:flex;flex-wrap:wrap;gap:7px}
 .chip{font-size:12px;padding:5px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.13);color:rgba(255,255,255,.65);background:rgba(255,255,255,.06);white-space:nowrap}
 .chip.lnk{color:#93c5fd;border-color:rgba(147,197,253,.28);background:rgba(147,197,253,.07)}
-
-/* ── STATS ── */
 .sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:1.25rem 0}
 @media(max-width:420px){.sgrid{grid-template-columns:repeat(2,1fr)}}
 .stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.9rem .5rem;text-align:center}
 .snum{font-size:24px;font-weight:500;color:#fff}
 .slbl{font-size:11px;color:rgba(255,255,255,.4);margin-top:3px;line-height:1.3}
-
-/* ── TAGS ── */
 .tag{display:inline-block;font-size:12px;padding:3px 9px;border-radius:20px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.11);margin:3px 2px}
 .tag.b{background:rgba(59,130,246,.14);color:#93c5fd;border-color:rgba(59,130,246,.28)}
 .tag.t{background:rgba(20,184,166,.11);color:#5eead4;border-color:rgba(20,184,166,.23)}
 .tag.p{background:rgba(139,92,246,.11);color:#c4b5fd;border-color:rgba(139,92,246,.23)}
 .sl{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.3);margin-bottom:5px;margin-top:.85rem}
 .sl:first-child{margin-top:0}
-
-/* ── FEATURED PROJECT ── */
 .proj-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:1rem}
 .proj-badge{font-size:11px;padding:3px 10px;border-radius:20px;background:rgba(99,102,241,.18);color:#a5b4fc;border:1px solid rgba(99,102,241,.3);white-space:nowrap}
 .proj-title{font-size:19px;font-weight:500;color:#fff;line-height:1.3;margin-bottom:4px}
 .proj-sub{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:12px}
 .proj-desc{font-size:14px;color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:1.25rem}
 .proj-divider{border:none;border-top:1px solid rgba(255,255,255,.08);margin:1.25rem 0}
-
-/* impact pills row */
 .impact-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:1.25rem}
 .impact{background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.18);border-radius:8px;padding:.7rem .85rem}
 .impact-num{font-size:18px;font-weight:500;color:#93c5fd}
 .impact-lbl{font-size:12px;color:rgba(255,255,255,.5);margin-top:2px;line-height:1.4}
-
-/* architecture breakdown */
 .arch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin-bottom:1.25rem}
 .arch-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:.85rem}
 .arch-icon{font-size:18px;margin-bottom:6px}
 .arch-title{font-size:13px;font-weight:500;color:rgba(255,255,255,.85);margin-bottom:4px}
 .arch-desc{font-size:12px;color:rgba(255,255,255,.45);line-height:1.5}
-
-/* responsibilities list */
 .resp-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:6px}
 .resp-list li{font-size:13px;color:rgba(255,255,255,.6);padding-left:16px;position:relative;line-height:1.6}
 .resp-list li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:#3b82f6}
-
-/* ── OTHER ROLES ── */
+.tsgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(82px,1fr));gap:8px}
+.tscard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:8px;padding:.65rem .4rem;text-align:center;transition:background .2s}
+.tscard:hover{background:rgba(255,255,255,.1)}
+.tsicon{font-size:20px;line-height:1}
+.tsname{font-size:11px;color:rgba(255,255,255,.55);margin-top:5px;line-height:1.3}
 .roles-grid{display:flex;flex-direction:column;gap:10px}
 .role-row{display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:.9rem 1rem}
 .role-dot{width:8px;height:8px;border-radius:50%;background:#6366f1;flex-shrink:0;margin-top:5px}
@@ -91,34 +76,15 @@ a:hover{color:#bfdbfe;text-decoration:underline}
 .role-company{font-size:12px;color:rgba(255,255,255,.45);margin-top:2px}
 .role-date{font-size:11px;color:rgba(255,255,255,.28);margin-top:1px}
 .role-tags{margin-top:6px}
-
-/* ── SKILLS ── */
-/* ── WINS ── */
-.wins{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px}
-.win{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-left:3px solid #3b82f6;border-radius:0 8px 8px 0;padding:.8rem 1rem}
-.win-num{font-size:17px;font-weight:500;color:#93c5fd}
-.win-lbl{font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;line-height:1.5}
-
-/* ── TECH GRID ── */
-.tsgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(82px,1fr));gap:8px}
-.tscard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:8px;padding:.65rem .4rem;text-align:center;transition:background .2s}
-.tscard:hover{background:rgba(255,255,255,.1)}
-.tsicon{font-size:20px;line-height:1}
-.tsname{font-size:11px;color:rgba(255,255,255,.55);margin-top:5px;line-height:1.3}
-
-/* ── EDU ── */
 .egrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
 .ecard{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:.85rem 1rem}
 .ecard-title{font-size:13px;font-weight:500;color:rgba(255,255,255,.85)}
 .ecard-sub{font-size:12px;color:rgba(255,255,255,.45);margin-top:3px}
 .ecard-pct{font-size:11px;color:rgba(255,255,255,.28);margin-top:2px}
-
-/* ── CTA ── */
 .cta{background:linear-gradient(135deg,rgba(59,130,246,.18),rgba(99,102,241,.18));border:1px solid rgba(99,102,241,.28);border-radius:16px;padding:1.75rem 1.5rem;margin-top:1.5rem;text-align:center}
 .cta p{font-size:14px;color:rgba(255,255,255,.65);line-height:1.8}
 .ctabtn{display:inline-block;margin-top:.85rem;padding:11px 30px;background:linear-gradient(135deg,#3b82f6,#6366f1);color:#fff;border-radius:8px;font-size:14px;font-weight:500;text-decoration:none}
 .ctabtn:hover{opacity:.88;text-decoration:none;color:#fff}
-
 .sec{margin-top:1.5rem}
 footer{margin-top:2rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.07);font-size:12px;color:rgba(255,255,255,.2);text-align:center}
 </style>
@@ -227,7 +193,7 @@ footer{margin-top:2rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255
 
       <hr class="proj-divider"/>
 
-      <!-- RESPONSIBILITIES -->
+      <!-- WHAT I DID -->
       <p class="sec-label">What I did</p>
       <ul class="resp-list">
         <li>Designed and maintained CI/CD pipelines for AI Agentic workloads using GitLab CI/CD and Jenkins</li>
@@ -244,13 +210,33 @@ footer{margin-top:2rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255
 
       <hr class="proj-divider"/>
 
-      <!-- TECH USED -->
-      <p class="sec-label">Tech used</p>
+      <!-- CORE TECH STACK — moved here, right after What I did -->
+      <p class="sec-label">Core tech stack</p>
+      <div class="tsgrid">
+        <div class="tscard"><div class="tsicon">☁️</div><div class="tsname">AWS</div></div>
+        <div class="tscard"><div class="tsicon">⎈</div><div class="tsname">Kubernetes</div></div>
+        <div class="tscard"><div class="tsicon">🐳</div><div class="tsname">Docker</div></div>
+        <div class="tscard"><div class="tsicon">🔧</div><div class="tsname">Terraform</div></div>
+        <div class="tscard"><div class="tsicon">⚙️</div><div class="tsname">Jenkins</div></div>
+        <div class="tscard"><div class="tsicon">🦊</div><div class="tsname">GitLab CI</div></div>
+        <div class="tscard"><div class="tsicon">📊</div><div class="tsname">Grafana</div></div>
+        <div class="tscard"><div class="tsicon">🔥</div><div class="tsname">Prometheus</div></div>
+        <div class="tscard"><div class="tsicon">📦</div><div class="tsname">Ansible</div></div>
+        <div class="tscard"><div class="tsicon">🚀</div><div class="tsname">ArgoCD</div></div>
+        <div class="tscard"><div class="tsicon">🐍</div><div class="tsname">Python</div></div>
+        <div class="tscard"><div class="tsicon">💻</div><div class="tsname">Bash</div></div>
+      </div>
+
+      <hr class="proj-divider"/>
+
+      <!-- TECH USED IN PROJECT -->
+      <p class="sec-label">Tech used in this project</p>
       <span class="tag b">GitLab CI/CD</span><span class="tag b">Jenkins</span><span class="tag b">AWS EKS</span>
       <span class="tag b">AWS ECS</span><span class="tag b">Terraform</span><span class="tag b">Docker</span>
       <span class="tag b">Kubernetes</span><span class="tag b">Prometheus</span><span class="tag b">Grafana</span>
       <span class="tag b">AWS EC2</span><span class="tag b">VPC</span><span class="tag b">IAM</span>
       <span class="tag b">S3</span><span class="tag b">CloudWatch</span><span class="tag b">CloudTrail</span><span class="tag b">ELB</span>
+
     </div>
   </div>
 
@@ -312,27 +298,6 @@ footer{margin-top:2rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255
           </div>
         </div>
 
-      </div>
-    </div>
-  </div>
-
-  <!-- CORE TECH STACK -->
-  <div class="sec">
-    <div class="glass">
-      <p class="sec-label">Core tech stack</p>
-      <div class="tsgrid">
-        <div class="tscard"><div class="tsicon">☁️</div><div class="tsname">AWS</div></div>
-        <div class="tscard"><div class="tsicon">⎈</div><div class="tsname">Kubernetes</div></div>
-        <div class="tscard"><div class="tsicon">🐳</div><div class="tsname">Docker</div></div>
-        <div class="tscard"><div class="tsicon">🔧</div><div class="tsname">Terraform</div></div>
-        <div class="tscard"><div class="tsicon">⚙️</div><div class="tsname">Jenkins</div></div>
-        <div class="tscard"><div class="tsicon">🦊</div><div class="tsname">GitLab CI</div></div>
-        <div class="tscard"><div class="tsicon">📊</div><div class="tsname">Grafana</div></div>
-        <div class="tscard"><div class="tsicon">🔥</div><div class="tsname">Prometheus</div></div>
-        <div class="tscard"><div class="tsicon">📦</div><div class="tsname">Ansible</div></div>
-        <div class="tscard"><div class="tsicon">🚀</div><div class="tsname">ArgoCD</div></div>
-        <div class="tscard"><div class="tsicon">🐍</div><div class="tsname">Python</div></div>
-        <div class="tscard"><div class="tsicon">💻</div><div class="tsname">Bash</div></div>
       </div>
     </div>
   </div>
