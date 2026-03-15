@@ -3,69 +3,114 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Palash Khandekar – DevOps Engineer</title>
+<meta name="description" content="Palash Khandekar – Senior DevOps Engineer with 5.6 years in AWS, Kubernetes, Terraform, and CI/CD pipelines."/>
+<title>Palash Khandekar – Senior DevOps Engineer</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#ffffff;--bg2:#f5f5f3;--bg3:#efefec;
+  --bg:#ffffff;--bg2:#f6f5f2;--bg3:#efefec;
   --text:#1a1a1a;--text2:#555550;--text3:#88887f;
-  --border:rgba(0,0,0,0.12);--border2:rgba(0,0,0,0.22);
-  --blue:#185FA5;--blue-bg:#E6F1FB;--blue-b:#B5D4F4;
-  --teal-bg:#E1F5EE;--teal:#0F6E56;--teal-b:#9FE1CB;
-  --pur-bg:#EEEDFE;--pur:#3C3489;--pur-b:#CECBF6;
-  --amb-bg:#FAEEDA;--amb:#854F0B;--amb-b:#FAC775;
+  --border:rgba(0,0,0,0.11);
+  --blue:#185FA5;--bluebg:#E6F1FB;--blueb:#B5D4F4;
+  --tealbg:#E1F5EE;--teal:#0F6E56;--tealb:#9FE1CB;
+  --purbg:#EEEDFE;--pur:#3C3489;--purb:#CECBF6;
+  --ambbg:#FAEEDA;--amb:#854F0B;--ambb:#FAC775;
+  --grnbg:#EAF3DE;--grn:#3B6D11;--grnb:#C0DD97;
   --r:8px;--rl:12px
 }
-@media(prefers-color-scheme:dark){
-  :root{
-    --bg:#1c1c1a;--bg2:#252522;--bg3:#2e2e2b;
-    --text:#f0efe8;--text2:#b0afa8;--text3:#888880;
-    --border:rgba(255,255,255,0.12);--border2:rgba(255,255,255,0.22);
-    --blue:#85B7EB;--blue-bg:#042C53;--blue-b:#0C447C;
-    --teal-bg:#04342C;--teal:#9FE1CB;--teal-b:#085041;
-    --pur-bg:#26215C;--pur:#CECBF6;--pur-b:#3C3489;
-    --amb-bg:#412402;--amb:#FAC775;--amb-b:#633806
-  }
-}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg3);color:var(--text);line-height:1.6}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#1c1c1a;--bg2:#252522;--bg3:#2a2a27;
+  --text:#f0efe8;--text2:#b0afa8;--text3:#77776f;
+  --border:rgba(255,255,255,0.10);
+  --blue:#85B7EB;--bluebg:#042C53;--blueb:#0C447C;
+  --tealbg:#04342C;--teal:#9FE1CB;--tealb:#085041;
+  --purbg:#26215C;--pur:#CECBF6;--purb:#3C3489;
+  --ambbg:#412402;--amb:#FAC775;--ambb:#633806;
+  --grnbg:#173404;--grn:#C0DD97;--grnb:#27500A
+}}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;background:var(--bg3);color:var(--text);line-height:1.6;-webkit-text-size-adjust:100%}
 a{color:var(--blue);text-decoration:none}
 a:hover{text-decoration:underline}
-.wrap{max-width:800px;margin:0 auto;padding:2rem 1.5rem 4rem}
-.sec{padding:2rem 0 0.5rem;border-top:0.5px solid var(--border);margin-top:1.5rem}
-.sec-lbl{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);margin-bottom:1rem}
-.card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--rl);padding:1rem 1.25rem;margin-bottom:1rem}
-.tag{display:inline-block;font-size:12px;padding:3px 10px;border-radius:20px;background:var(--bg2);color:var(--text2);border:0.5px solid var(--border);margin:3px 2px}
-.tag.b{background:var(--blue-bg);color:var(--blue);border-color:var(--blue-b)}
-.badge{font-size:11px;padding:2px 8px;border-radius:20px;font-weight:500}
-.baws{background:var(--amb-bg);color:var(--amb);border:0.5px solid var(--amb-b)}
-.bdvp{background:var(--teal-bg);color:var(--teal);border:0.5px solid var(--teal-b)}
-.bk8s{background:var(--pur-bg);color:var(--pur);border:0.5px solid var(--pur-b)}
-.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:1.5rem 0}
-.stat{background:var(--bg2);border-radius:var(--r);padding:1rem;text-align:center}
-.snum{font-size:26px;font-weight:500}
-.slbl{font-size:12px;color:var(--text2);margin-top:4px}
-.hero{padding:2rem 0 1rem}
-.av{width:60px;height:60px;border-radius:50%;background:var(--blue-bg);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:500;color:var(--blue);border:0.5px solid var(--blue-b);flex-shrink:0}
-.hrow{display:flex;align-items:center;gap:16px;margin-bottom:12px}
-.crow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.chip{font-size:12px;padding:5px 12px;border-radius:20px;border:0.5px solid var(--border);color:var(--text2);display:inline-flex;align-items:center;gap:5px;background:var(--bg)}
-.chip.lnk{color:var(--blue);border-color:var(--blue-b);background:var(--blue-bg)}
-.jt{font-size:15px;font-weight:500}
-.jm{font-size:13px;color:var(--text2);margin-top:2px}
-.jp{font-size:13px;font-style:italic;color:var(--text3);margin:8px 0 6px}
-.jh{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px}
-.jd{font-size:12px;color:var(--text3);margin-top:4px;text-align:right}
-ul.bul{padding-left:1.2rem;margin-top:8px}
-ul.bul li{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:4px}
-.sg{margin-bottom:1rem}
-.sl{font-size:12px;font-weight:500;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
-.egrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.pc{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--rl);padding:1rem 1.25rem}
-.pc h3{font-size:14px;font-weight:500;margin-bottom:6px}
-.pc p{font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:10px}
-footer{margin-top:3rem;padding-top:1.5rem;border-top:0.5px solid var(--border);font-size:13px;color:var(--text3);text-align:center}
-@media(max-width:540px){.jh{flex-direction:column}.jd{text-align:left}}
+.wrap{max-width:720px;margin:0 auto;padding:1.5rem 1rem 4rem}
+h1{font-size:clamp(20px,5vw,26px);font-weight:500;line-height:1.2}
+h2{font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:.85rem}
+.sec{margin-top:1.75rem;padding-top:1.5rem;border-top:.5px solid var(--border)}
+
+/* HERO */
+.hero{padding:1.5rem 0 .5rem}
+.hrow{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.av{width:52px;height:52px;border-radius:50%;background:var(--bluebg);color:var(--blue);border:.5px solid var(--blueb);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:500;flex-shrink:0}
+.tagline{font-size:13px;color:var(--text2);margin-top:3px}
+.summary{font-size:14px;color:var(--text2);line-height:1.75;margin-bottom:12px}
+.contacts{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:12px;padding:5px 11px;border-radius:20px;border:.5px solid var(--border);color:var(--text2);background:var(--bg);white-space:nowrap}
+.chip.lnk{color:var(--blue);border-color:var(--blueb);background:var(--bluebg)}
+
+/* STATS */
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:1.25rem 0}
+@media(max-width:400px){.sgrid{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--bg2);border-radius:var(--r);padding:.85rem .5rem;text-align:center}
+.snum{font-size:22px;font-weight:500;color:var(--text)}
+.slbl{font-size:11px;color:var(--text3);margin-top:3px;line-height:1.3}
+
+/* AVAILABLE BANNER */
+.avail{background:var(--grnbg);border:.5px solid var(--grnb);border-radius:var(--r);padding:.65rem 1rem;font-size:13px;color:var(--grn);margin-bottom:1.25rem;display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--grn);flex-shrink:0}
+
+/* TAGS */
+.tag{display:inline-block;font-size:12px;padding:3px 9px;border-radius:20px;background:var(--bg2);color:var(--text2);border:.5px solid var(--border);margin:3px 2px}
+.tag.b{background:var(--bluebg);color:var(--blue);border-color:var(--blueb)}
+.tag.t{background:var(--tealbg);color:var(--teal);border-color:var(--tealb)}
+.tag.p{background:var(--purbg);color:var(--pur);border-color:var(--purb)}
+
+/* SKILL GROUPS */
+.sg{margin-bottom:.85rem}
+.sl{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:5px}
+
+/* TIMELINE */
+.tl{display:flex;flex-direction:column;gap:0}
+.tlitem{display:flex;gap:12px;padding-bottom:1.25rem}
+.tlitem:last-child{padding-bottom:0}
+.tleft{display:flex;flex-direction:column;align-items:center;width:14px;flex-shrink:0;padding-top:5px}
+.tldot{width:10px;height:10px;border-radius:50%;background:var(--blue);flex-shrink:0}
+.tlline{width:1px;background:var(--border);flex:1;margin-top:4px}
+.tlitem:last-child .tlline{display:none}
+.tlbody{flex:1;min-width:0}
+.tljt{font-size:14px;font-weight:500;line-height:1.3}
+.tljm{font-size:12px;color:var(--text2);margin-top:2px}
+.tljd{font-size:11px;color:var(--text3);margin-top:2px}
+.badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;font-weight:500;margin-top:5px}
+.baws{background:var(--ambbg);color:var(--amb);border:.5px solid var(--ambb)}
+.bdvp{background:var(--tealbg);color:var(--teal);border:.5px solid var(--tealb)}
+.bk8s{background:var(--purbg);color:var(--pur);border:.5px solid var(--purb)}
+
+/* TECH STACK GRID */
+.tsgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px}
+.tscard{background:var(--bg);border:.5px solid var(--border);border-radius:var(--r);padding:.6rem .75rem;text-align:center}
+.tsicon{font-size:18px;line-height:1}
+.tsname{font-size:11px;color:var(--text2);margin-top:4px;line-height:1.3}
+
+/* KEY WINS */
+.wins{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.win{background:var(--bg);border:.5px solid var(--border);border-radius:var(--rl);padding:.85rem 1rem;border-left:3px solid var(--blue)}
+.win p:first-child{font-size:15px;font-weight:500;color:var(--blue)}
+.win p:last-child{font-size:13px;color:var(--text2);margin-top:3px;line-height:1.5}
+
+/* EDU */
+.egrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
+.ecard{background:var(--bg);border:.5px solid var(--border);border-radius:var(--rl);padding:.85rem 1rem}
+.ecard p:first-child{font-size:13px;font-weight:500}
+.ecard p:nth-child(2){font-size:12px;color:var(--text2);margin-top:3px}
+.ecard p:last-child{font-size:11px;color:var(--text3);margin-top:2px}
+
+/* CTA */
+.cta{background:var(--bluebg);border:.5px solid var(--blueb);border-radius:var(--rl);padding:1.25rem;margin-top:1.75rem;text-align:center}
+.cta p{font-size:14px;color:var(--blue);line-height:1.7}
+.ctabtn{display:inline-block;margin-top:.75rem;padding:10px 22px;background:var(--blue);color:#fff;border-radius:var(--r);font-size:14px;font-weight:500;text-decoration:none}
+.ctabtn:hover{opacity:.9;text-decoration:none}
+
+footer{margin-top:2.5rem;padding-top:1.25rem;border-top:.5px solid var(--border);font-size:12px;color:var(--text3);text-align:center}
 </style>
 </head>
 <body>
@@ -76,193 +121,220 @@ footer{margin-top:3rem;padding-top:1.5rem;border-top:0.5px solid var(--border);f
     <div class="hrow">
       <div class="av">PK</div>
       <div>
-        <h1 style="font-size:24px;font-weight:500">Palash Khandekar</h1>
-        <p style="font-size:14px;color:var(--text2);margin-top:3px">Senior DevOps Engineer &nbsp;·&nbsp; AWS &nbsp;·&nbsp; Kubernetes &nbsp;·&nbsp; CI/CD</p>
+        <h1>Palash Khandekar</h1>
+        <p class="tagline">Senior DevOps Engineer &nbsp;·&nbsp; 5.6 years</p>
       </div>
     </div>
-    <p style="font-size:14px;color:var(--text2);line-height:1.75;max-width:640px">
-      DevOps engineer with 5.6+ years building automation pipelines, cloud infrastructure, and scalable deployments on AWS. Experienced across AI platforms, e-commerce, and enterprise CRM systems.
+    <p class="summary">
+      DevOps engineer specializing in AWS cloud infrastructure, Kubernetes orchestration, and CI/CD automation. Delivered zero-downtime deployments and 40% faster release cycles across AI, e-commerce, and enterprise CRM platforms.
     </p>
-    <div class="crow">
-      <a href="mailto:palashkhandekar@gmail.com" class="chip lnk">✉ palashkhandekar@gmail.com</a>
-      <span class="chip">📱 +91 9595913912</span>
-      <a href="https://www.linkedin.com/in/palash-khandekar" class="chip lnk" target="_blank">🔗 LinkedIn</a>
-      <span class="chip">📍 Mumbai / Pune / Bangalore</span>
+    <div class="avail">
+      <span class="dot"></span>
+      Open to DevOps, Cloud Infrastructure, and Platform Engineering roles
+    </div>
+    <div class="contacts">
+      <a href="mailto:palashkhandekar@gmail.com" class="chip lnk">palashkhandekar@gmail.com</a>
+      <a href="tel:+919595913912" class="chip lnk">+91 9595913912</a>
+      <a href="https://www.linkedin.com/in/palash-khandekar" class="chip lnk" target="_blank">LinkedIn</a>
+      <span class="chip">Mumbai / Pune / Bangalore</span>
     </div>
   </div>
 
   <!-- STATS -->
   <div class="sgrid">
-    <div class="stat"><div class="snum">5.6</div><div class="slbl">Years experience</div></div>
-    <div class="stat"><div class="snum">12+</div><div class="slbl">AWS services used</div></div>
-    <div class="stat"><div class="snum">40%</div><div class="slbl">Deployment time cut</div></div>
-    <div class="stat"><div class="snum">0</div><div class="slbl">Downtime deployments</div></div>
+    <div class="stat"><div class="snum">5.6</div><div class="slbl">Years exp</div></div>
+    <div class="stat"><div class="snum">40%</div><div class="slbl">Faster deploys</div></div>
+    <div class="stat"><div class="snum">12+</div><div class="slbl">AWS services</div></div>
+    <div class="stat"><div class="snum">0</div><div class="slbl">Downtime releases</div></div>
+  </div>
+
+  <!-- KEY WINS -->
+  <div class="sec">
+    <h2>Key achievements</h2>
+    <div class="wins">
+      <div class="win">
+        <p>40% faster deployments</p>
+        <p>Automated CI/CD pipelines using GitLab and Jenkins at DOT AI, cutting release cycle time by nearly half.</p>
+      </div>
+      <div class="win">
+        <p>Zero-downtime releases</p>
+        <p>Implemented blue-green deployment strategies on EKS and ECS across multiple production environments.</p>
+      </div>
+      <div class="win">
+        <p>AI Agentic pipelines</p>
+        <p>Built end-to-end DevOps pipeline framework for AI Agentic workloads at Zensar Technologies.</p>
+      </div>
+      <div class="win">
+        <p>EKS cluster upgrades</p>
+        <p>Planned and executed control plane and node group version upgrades with zero production impact using Terraform rolling updates.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TECH STACK -->
+  <div class="sec">
+    <h2>Core tech stack</h2>
+    <div class="tsgrid">
+      <div class="tscard"><div class="tsicon">☁️</div><div class="tsname">AWS</div></div>
+      <div class="tscard"><div class="tsicon">⎈</div><div class="tsname">Kubernetes</div></div>
+      <div class="tscard"><div class="tsicon">🐳</div><div class="tsname">Docker</div></div>
+      <div class="tscard"><div class="tsicon">🔧</div><div class="tsname">Terraform</div></div>
+      <div class="tscard"><div class="tsicon">⚙️</div><div class="tsname">Jenkins</div></div>
+      <div class="tscard"><div class="tsicon">🦊</div><div class="tsname">GitLab CI</div></div>
+      <div class="tscard"><div class="tsicon">📊</div><div class="tsname">Grafana</div></div>
+      <div class="tscard"><div class="tsicon">🔥</div><div class="tsname">Prometheus</div></div>
+      <div class="tscard"><div class="tsicon">📦</div><div class="tsname">Ansible</div></div>
+      <div class="tscard"><div class="tsicon">🚀</div><div class="tsname">ArgoCD</div></div>
+      <div class="tscard"><div class="tsicon">🐍</div><div class="tsname">Python</div></div>
+      <div class="tscard"><div class="tsicon">💻</div><div class="tsname">Bash</div></div>
+    </div>
   </div>
 
   <!-- SKILLS -->
   <div class="sec">
-    <p class="sec-lbl">Skills</p>
-    <div class="sg"><div class="sl">Cloud – AWS</div>
-      <span class="tag b">EC2</span><span class="tag b">S3</span><span class="tag b">IAM</span><span class="tag b">VPC</span>
-      <span class="tag b">EKS</span><span class="tag b">ECR</span><span class="tag b">CloudWatch</span><span class="tag b">Route53</span>
-      <span class="tag b">CloudFront</span><span class="tag b">CloudTrail</span><span class="tag b">ELB</span><span class="tag b">ECS</span>
+    <h2>Skills overview</h2>
+
+    <div class="sg">
+      <div class="sl">AWS services</div>
+      <span class="tag b">EC2</span><span class="tag b">EKS</span><span class="tag b">ECS</span><span class="tag b">S3</span>
+      <span class="tag b">IAM</span><span class="tag b">VPC</span><span class="tag b">CloudWatch</span>
+      <span class="tag b">Route53</span><span class="tag b">ECR</span><span class="tag b">ELB</span>
+      <span class="tag b">CloudFront</span><span class="tag b">CloudTrail</span>
     </div>
-    <div class="sg"><div class="sl">Cloud – Azure</div>
-      <span class="tag">VNet</span><span class="tag">RBAC</span><span class="tag">Azure VM</span><span class="tag">Azure Blob Storage</span>
+
+    <div class="sg">
+      <div class="sl">CI/CD &amp; DevOps</div>
+      <span class="tag t">Jenkins</span><span class="tag t">GitLab CI/CD</span>
+      <span class="tag t">GitHub Actions</span><span class="tag t">ArgoCD</span>
+      <span class="tag t">Blue-green deploy</span><span class="tag t">SonarQube</span>
     </div>
-    <div class="sg"><div class="sl">CI/CD &amp; Automation</div>
-      <span class="tag b">Jenkins</span><span class="tag b">GitLab CI/CD</span><span class="tag b">GitHub Actions</span>
-      <span class="tag b">ArgoCD</span><span class="tag">Blue-green deployments</span><span class="tag">Zero-downtime releases</span>
+
+    <div class="sg">
+      <div class="sl">Infrastructure &amp; containers</div>
+      <span class="tag p">Terraform</span><span class="tag p">Ansible</span>
+      <span class="tag p">Kubernetes</span><span class="tag p">Docker</span>
+      <span class="tag p">Helm</span>
     </div>
-    <div class="sg"><div class="sl">Containers &amp; Orchestration</div>
-      <span class="tag b">Kubernetes (EKS)</span><span class="tag b">Docker</span>
+
+    <div class="sg">
+      <div class="sl">Monitoring</div>
+      <span class="tag">Prometheus</span><span class="tag">Grafana</span>
+      <span class="tag">PagerDuty</span><span class="tag">EventBridge</span>
+      <span class="tag">CloudWatch dashboards</span>
     </div>
-    <div class="sg"><div class="sl">IaC &amp; Config Management</div>
-      <span class="tag b">Terraform</span><span class="tag b">Ansible</span>
+
+    <div class="sg">
+      <div class="sl">Languages</div>
+      <span class="tag">Bash</span><span class="tag">Python</span>
+      <span class="tag">Shell Script</span><span class="tag">JavaScript</span>
+      <span class="tag">TypeScript</span><span class="tag">Java</span>
     </div>
-    <div class="sg"><div class="sl">Monitoring &amp; Observability</div>
-      <span class="tag b">Prometheus</span><span class="tag b">Grafana</span><span class="tag">PagerDuty</span>
-      <span class="tag">Amazon EventBridge</span><span class="tag">CloudWatch Dashboards</span>
-    </div>
-    <div class="sg"><div class="sl">Languages</div>
-      <span class="tag">Bash</span><span class="tag">Python</span><span class="tag">Shell Script</span>
-      <span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span>
-    </div>
-    <div class="sg"><div class="sl">Other</div>
-      <span class="tag">SonarQube</span><span class="tag">Git / GitHub</span><span class="tag">Jira</span>
-      <span class="tag">Azure DevOps</span><span class="tag">MS Dynamics CRM</span><span class="tag">Agentic AI Dev</span>
+
+    <div class="sg">
+      <div class="sl">Azure &amp; other</div>
+      <span class="tag">Azure VM</span><span class="tag">VNet</span><span class="tag">RBAC</span>
+      <span class="tag">Azure Blob</span><span class="tag">MS Dynamics CRM</span>
+      <span class="tag">Jira</span><span class="tag">Git / GitHub</span>
     </div>
   </div>
 
-  <!-- EXPERIENCE -->
+  <!-- EXPERIENCE TIMELINE -->
   <div class="sec">
-    <p class="sec-lbl">Experience</p>
+    <h2>Experience</h2>
+    <div class="tl">
 
-    <div class="card">
-      <div class="jh">
-        <div><p class="jt">Senior Software Engineer</p><p class="jm">Zensar Technologies Ltd · Pune</p></div>
-        <div><span class="badge baws">AWS · EKS · GitLab</span><p class="jd">Jul 2025 – Dec 2025</p></div>
+      <div class="tlitem">
+        <div class="tleft"><div class="tldot"></div><div class="tlline"></div></div>
+        <div class="tlbody">
+          <p class="tljt">Senior Software Engineer</p>
+          <p class="tljm">Zensar Technologies Ltd · Pune</p>
+          <p class="tljd">Jul 2025 – Dec 2025</p>
+          <span class="badge baws">AWS · EKS · GitLab · Terraform</span>
+          <p style="font-size:13px;color:var(--text2);margin-top:8px;line-height:1.6">
+            Led CI/CD pipeline design for AI Agentic workloads. Implemented blue-green deployments on EKS/ECS, managed cluster upgrades, and built Prometheus + Grafana observability dashboards.
+          </p>
+        </div>
       </div>
-      <p class="jp">Project: Agentic API Factory Pipeline Development</p>
-      <ul class="bul">
-        <li>Designed and maintained CI/CD pipelines for build, test, and deploy using GitLab CI/CD and Jenkins for AI Agentic workloads</li>
-        <li>Implemented blue-green deployment strategies for zero-downtime production releases on EKS and ECS</li>
-        <li>Planned and executed EKS cluster version upgrades while minimizing production downtime</li>
-        <li>Improved infrastructure observability using Prometheus and Grafana dashboards</li>
-        <li>Used Terraform IaC to manage infrastructure across DEV, QA, and PROD environments</li>
-        <li>Designed highly available cloud infrastructure with load balancing, VPC, and auto-scaling</li>
-      </ul>
-    </div>
 
-    <div class="card">
-      <div class="jh">
-        <div><p class="jt">Senior Engineer (QA + DevOps) – Contractor</p><p class="jm">DOT AI Corporation · Bangalore</p></div>
-        <div><span class="badge bdvp">Jenkins · Terraform · EKS</span><p class="jd">Jan 2025 – Apr 2025</p></div>
+      <div class="tlitem">
+        <div class="tleft"><div class="tldot"></div><div class="tlline"></div></div>
+        <div class="tlbody">
+          <p class="tljt">Senior Engineer – QA + DevOps</p>
+          <p class="tljm">DOT AI Corporation · Bangalore</p>
+          <p class="tljd">Jan 2025 – Apr 2025</p>
+          <span class="badge bdvp">Jenkins · Terraform · VPC</span>
+          <p style="font-size:13px;color:var(--text2);margin-top:8px;line-height:1.6">
+            Reduced deployment time by 40% via pipeline automation. Managed EKS upgrades with Terraform rolling updates and designed secure VPC networking with NAT gateways and security groups.
+          </p>
+        </div>
       </div>
-      <p class="jp">Project: SAS Application Development &amp; Testing</p>
-      <ul class="bul">
-        <li>Reduced deployment time by 40% through CI/CD pipeline automation using GitLab CI/CD and Jenkins</li>
-        <li>Managed EKS node group upgrades using Terraform with rolling updates for zero-downtime availability</li>
-        <li>Designed secure AWS VPC networking including subnets, routing tables, NAT gateways, and security groups</li>
-        <li>Implemented CloudWatch dashboards for real-time execution monitoring</li>
-      </ul>
-    </div>
 
-    <div class="card">
-      <div class="jh">
-        <div><p class="jt">Senior Engineer (QA + DevOps)</p><p class="jm">Refactor Academy Pvt Ltd (Client: DOT AI) · Bangalore</p></div>
-        <div><span class="badge bdvp">AWS · kubectl · CI/CD</span><p class="jd">Jul 2024 – Jan 2025</p></div>
+      <div class="tlitem">
+        <div class="tleft"><div class="tldot"></div><div class="tlline"></div></div>
+        <div class="tlbody">
+          <p class="tljt">Senior Engineer – QA + DevOps</p>
+          <p class="tljm">Refactor Academy (Client: DOT AI) · Bangalore</p>
+          <p class="tljd">Jul 2024 – Jan 2025</p>
+          <span class="badge bdvp">kubectl · AWS · CI/CD</span>
+          <p style="font-size:13px;color:var(--text2);margin-top:8px;line-height:1.6">
+            Automated regression pipelines, enabled shift-left testing, and monitored post-upgrade cluster health using kubectl and AWS console.
+          </p>
+        </div>
       </div>
-      <ul class="bul">
-        <li>Automated regression and smoke test execution as part of deployment pipelines</li>
-        <li>Enabled shift-left testing and improved deployment reliability with development teams</li>
-        <li>Monitored post-upgrade cluster health, addon readiness, and app stability using AWS console and kubectl</li>
-        <li>Created deployment and pipeline documentation to support DevOps best practices</li>
-      </ul>
-    </div>
 
-    <div class="card">
-      <div class="jh">
-        <div><p class="jt">Consultant – Cloud &amp; DevOps Support</p><p class="jm">Hitachi Solutions India Pvt Ltd · Pune</p></div>
-        <div><span class="badge bk8s">AWS · Terraform · Monitoring</span><p class="jd">Aug 2022 – Aug 2023</p></div>
+      <div class="tlitem">
+        <div class="tleft"><div class="tldot"></div><div class="tlline"></div></div>
+        <div class="tlbody">
+          <p class="tljt">Consultant – Cloud &amp; DevOps Support</p>
+          <p class="tljm">Hitachi Solutions India · Pune</p>
+          <p class="tljd">Aug 2022 – Aug 2023</p>
+          <span class="badge bk8s">Terraform · Prometheus · Grafana</span>
+          <p style="font-size:13px;color:var(--text2);margin-top:8px;line-height:1.6">
+            Supported MS Dynamics CRM cloud deployments, built reusable Terraform modules, and implemented Prometheus + Grafana alerting to reduce incident response time.
+          </p>
+        </div>
       </div>
-      <ul class="bul">
-        <li>Supported cloud-hosted Microsoft Dynamics CRM and Cornerstone SBX on AWS EC2</li>
-        <li>Integrated BDD automation frameworks into CI/CD pipelines</li>
-        <li>Developed reusable Terraform modules for networking, compute, and security resource provisioning</li>
-        <li>Implemented Prometheus + Grafana monitoring and alerting, reducing incident response time</li>
-      </ul>
-    </div>
 
-    <div class="card">
-      <div class="jh">
-        <div><p class="jt">DevOps Support Engineer</p><p class="jm">Prolific Systems &amp; Technologies Pvt Ltd · Mumbai</p></div>
-        <div><span class="badge baws">AWS · Git · Selenium</span><p class="jd">May 2019 – Jun 2022</p></div>
+      <div class="tlitem">
+        <div class="tleft"><div class="tldot"></div><div class="tlline"></div></div>
+        <div class="tlbody">
+          <p class="tljt">DevOps Support Engineer</p>
+          <p class="tljm">Prolific Systems &amp; Technologies · Mumbai</p>
+          <p class="tljd">May 2019 – Jun 2022</p>
+          <span class="badge baws">AWS · Git · Selenium · Jenkins</span>
+          <p style="font-size:13px;color:var(--text2);margin-top:8px;line-height:1.6">
+            Built and maintained CI/CD pipelines, managed AWS EC2 deployments, developed Selenium (Java) automation frameworks, and supported Agile sprint-based release cycles.
+          </p>
+        </div>
       </div>
-      <ul class="bul">
-        <li>Supported CI/CD pipelines integrating automated test execution and build validation steps</li>
-        <li>Managed application deployments, artifact storage (S3), and monitoring (CloudWatch) on AWS EC2</li>
-        <li>Contributed automation framework development using Selenium (Java)</li>
-        <li>Worked in Agile/Scrum environments supporting sprint releases, hotfixes, and UAT deployments</li>
-      </ul>
-    </div>
-  </div>
 
-  <!-- PROJECTS -->
-  <div class="sec">
-    <p class="sec-lbl">Featured Projects</p>
-    <div class="pgrid">
-      <div class="pc">
-        <h3>🚀 Agentic API Factory Pipeline</h3>
-        <p>End-to-end CI/CD pipelines for AI Agentic workloads using GitLab, Jenkins, EKS, and Terraform with blue-green zero-downtime releases across DEV/QA/PROD.</p>
-        <span class="tag b">GitLab CI/CD</span><span class="tag b">EKS</span><span class="tag b">Terraform</span>
-      </div>
-      <div class="pc">
-        <h3>⚙️ EKS Cluster Upgrade Automation</h3>
-        <p>Automated EKS node group and control plane upgrades using Terraform rolling updates with health checks, addon validation, and rollback procedures.</p>
-        <span class="tag b">Terraform</span><span class="tag b">EKS</span><span class="tag b">kubectl</span>
-      </div>
-      <div class="pc">
-        <h3>📊 Prometheus + Grafana Stack</h3>
-        <p>Full observability stack on Kubernetes with custom dashboards for infra and app metrics. Integrated PagerDuty alerting for on-call workflows.</p>
-        <span class="tag b">Prometheus</span><span class="tag b">Grafana</span><span class="tag b">Kubernetes</span>
-      </div>
-      <div class="pc">
-        <h3>🏗️ Reusable Terraform Modules</h3>
-        <p>Library of IaC modules for VPC, EC2, EKS, IAM, and S3 provisioning across multiple environments, significantly reducing provisioning time.</p>
-        <span class="tag b">Terraform</span><span class="tag b">AWS VPC</span><span class="tag b">IAM</span>
-      </div>
     </div>
   </div>
 
   <!-- EDUCATION -->
   <div class="sec">
-    <p class="sec-lbl">Education</p>
+    <h2>Education</h2>
     <div class="egrid">
-      <div class="card" style="padding:.9rem 1.1rem">
-        <p style="font-size:14px;font-weight:500">PGDC – Transmission &amp; Distribution Systems</p>
-        <p style="font-size:13px;color:var(--text2);margin-top:4px">National Power Training Institute (NPTI), Nagpur</p>
-        <p style="font-size:12px;color:var(--text3);margin-top:2px">2019 · 82%</p>
+      <div class="ecard">
+        <p>PGDC – Transmission &amp; Distribution</p>
+        <p>NPTI Nagpur · 2019</p>
+        <p>82%</p>
       </div>
-      <div class="card" style="padding:.9rem 1.1rem">
-        <p style="font-size:14px;font-weight:500">B.E – Electrical Engineering</p>
-        <p style="font-size:13px;color:var(--text2);margin-top:4px">R H Sapat College of Engineering, Nashik</p>
-        <p style="font-size:12px;color:var(--text3);margin-top:2px">2018 · 69.79%</p>
+      <div class="ecard">
+        <p>B.E – Electrical Engineering</p>
+        <p>R H Sapat College, Nashik · 2018</p>
+        <p>69.79%</p>
       </div>
     </div>
   </div>
 
   <!-- CTA -->
-  <div class="sec">
-    <p class="sec-lbl">Get in touch</p>
-    <p style="font-size:14px;color:var(--text2);line-height:1.75;max-width:560px">
-      Open to DevOps, Cloud Infrastructure, and Platform Engineering roles. Reach out via
-      <a href="mailto:palashkhandekar@gmail.com">email</a> or connect on
-      <a href="https://www.linkedin.com/in/palash-khandekar" target="_blank">LinkedIn</a>.
-    </p>
+  <div class="cta">
+    <p>Available for DevOps, Cloud Infrastructure &amp; Platform Engineering roles.<br/>Let's connect and discuss how I can add value to your team.</p>
+    <a href="mailto:palashkhandekar@gmail.com" class="ctabtn">Get in touch</a>
   </div>
 
-  <footer>Built with HTML · Palash Khandekar © 2026</footer>
+  <footer>Palash Khandekar · palashkhandekar.github.io · 2026</footer>
 </div>
 </body>
 </html>
